@@ -57,31 +57,6 @@
 			$('#contacts').on('click',loadContacts);
 			$('.out_btn').on('click', logout);
 			// ---------------------
-			// $.ajax({
-			// 	url: 'xhr/get_projects.php',
-			// 	type: 'get',
-			// 	dataType: 'json',
-			// 	success: function(response){
-			// 		if(response.error){
-			// 			console.log(response.error);
-			// 		}else{
-			// 			$.get('templates/app.html', function(html){
-			// 				var h = $(html),
-			// 					tempCode = h.find('#template_project_1').html(),
-			// 					markup = '';
-
-			// 				$.template('projects', tempCode);
-
-			// 				for (var i = 0, j=response.projects.length; i<j; i++){
-			// 					var project = response.projects[i];
-			// 					markup += $.render(project, 'projects');
-			// 				};
-
-			// 				$('.projects').html(markup);
-			// 			})
-			// 		}
-			// 	}
-			// })
 
 			// $('.join_btn').on('click', loadRegForm);
 			
@@ -109,6 +84,7 @@
 					if(response.error){
 						console.log(response.error);
 					}else{
+						console.log(response);
 						$.get('templates/app.html', function(html){
 							var h = $(html),
 								tempCode = h.find('#template_project_1').html(),
@@ -118,8 +94,18 @@
 
 							for (var i = 0, j=response.projects.length; i<j; i++){
 								var project = response.projects[i];
-								markup += $.render(project, 'projects');
-							};
+								markup += $.render(project, 'projects');							};
+								
+								// var client = project.clientName;
+								// console.log("client name is :"+client);
+								// ====== accordian attempt =======
+								// $('#accordian').jacc({
+								// 	header: '#down_arrow',
+								// 	content: '.content',
+								// 	easing: 'easeOutCirc',
+								// 	duration: '2000'
+								// })
+								// =================================
 
 							$('.projects').html(markup);
 						})
@@ -135,10 +121,37 @@
 	var loadTasks = function(){
 		$.get('templates/app.html', function(html){
 			var h = $(html);
-			var appCode = h.find('#template_task_page').html();
+			var appCode = h.find('#template_task').html();
 			$.template('app', appCode);		// compile template
 			$.render(currentUser, 'app');		// use template
 			container.html(appCode);
+
+			$.ajax({
+				url: 'xhr/get_tasks.php',
+				type: 'get',
+				dataType: 'json',
+				success: function(response){
+					if(response.error){
+						console.log(response.error);
+					}else{
+						console.log(response);
+						$.get('templates/app.html', function(html){
+							var h = $(html),
+								tempCode = h.find('#template_task_1').html(),
+								markup = '';
+
+							$.template('tasks', tempCode);
+
+							for (var i = 0, j=response.tasks.length; i<j; i++){
+								var task = response.tasks[i];
+								markup += $.render(task, 'tasks');
+							};
+
+							$('.tasks').html(markup);
+						})
+					}
+				}
+			})
 
 		});
 

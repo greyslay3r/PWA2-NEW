@@ -53,26 +53,31 @@
 	</script>
 
     <script type="text/template" id="template_project_1">
-        // Main Area
+         <!-- Main Area -->
         <section id='main'>
             <div id='project'>
                 <div id='important' class='projects'>
-                    <img id='important_icon' scr="images/important_icon.png" alt='important' />
+                    <img id='important_icon' scr="images/important_icon.png" />
                     <p>{{=status}}</p>
                     <p>ID#<span class='pID'>{{=id}}</span></p>
                     <h2>{{=projectName}}</h2>
                     <h3>{{=dueDate}}</h3>
+                    <img id='down_arrow' src='images/down_arrow.png' alt='down arrow' />
                     <img id='delete_project_1' src='images/delete_icon.png' alt='delete' />
                     <img id='edit' src='images/edit_icon.png' alt='edit' />
                 </div>
             </div>
+        </section>
+        <section id='accordian'>
+            <h4>{{=projectDescription}}</h4>
+            <div class='content'>test content============</div>
         </section>
     </script>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~task page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	
-	<script type="text/template" id="template_task_page">
+	<script type="text/template" id="template_task">
 	
 		 <div id="top_bar">
         	<li><img title="top_logo" src="images/top_bar.png"/></li>
@@ -83,34 +88,34 @@
         
         <a class="account" href="account.html">My Account</a>
         
-    <h3>Tasks</h3>
-        
-        
-   <button class="add_btn" type="button">Add +</button> 
-        
-        <div id="task_blank">
-        	<p>Task Name Here</p>
-        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
-        	
-        </div>
-        
-        <div id="task_blank">
-        	<p>Task Name Here</p>
-        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
-        	
-        </div>
-        <div id="task_blank">
-        	<p>Task Name Here</p>
-        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
-        	
-        </div>
-        <div id="task_blank">
-        	<p>Task Name Here</p>
-        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
-        	
-        </div> 
+    <aside id="dashboard">
+         <h1>Dashboard</h1>
+            <!--<h1>Projects</h1>-->
+            <p id ="new_project_button">Create New Project</p>
+           <h1 id='dashboard_tasks_project'>Tasks</h1>
+     </aside>
+
+
+
 	
 	</script>
+
+    <script type="text/template" id="template_task_1">
+         <!-- Main Area -->
+        <section id='main'>
+            <div id='task'>
+                <div id='important' class='tasks'>
+                    <img id='important_icon' scr="images/important_icon.png" />
+                    <p>{{=status}}</p>
+                    <p>ID#<span class='pID'>{{=id}}</span></p>
+                    <h2>{{=taskName}}</h2>
+                    <h3>{{=dueDate}}</h3>
+                    <img id='delete_project_1' src='images/delete_icon.png' alt='delete' />
+                    <img id='edit' src='images/edit_icon.png' alt='edit' />
+                </div>
+            </div>
+        </section>
+    </script>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~contact page~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
