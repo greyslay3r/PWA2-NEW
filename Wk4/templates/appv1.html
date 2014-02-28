@@ -1,0 +1,181 @@
+<!-- 
+	Put the skeleton HTML for your Application here
+	DO NOT include <html>, <head>, or <body> tags
+	
+	Create a separate template for any repeatable components
+-->
+
+<div>
+<!-- ~~~~~~~~~~~~~~~~ dashboard page  ~~~~~~~~~~~~~~~~~~ -->
+	<script type="text/template" id="template_dash">
+	
+		 <div id="top_bar">
+        	<li><img title="top_logo" src="images/top_bar.png"/></li>
+        </div>
+        
+        <button class="out_btn" type="button">Logout</button> 
+        
+        <a class="account" href="account.html">My Account</a>
+        <h3>Dashboard</h3>
+        <div id="menu" >
+        	 <li><p id="projects">Projects</p></li>
+        	 <li><a id="tasks">Tasks</a></li>
+        	 <li><a id="contacts">Contacts</a></li>
+        </div>
+	
+	</script>
+<!-- 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- 	~~~~~~~~~~~~~~~~~~~~~~Project page ~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<script type="text/template" id="template_project_page">
+	
+		 <div id="top_bar">
+        	<li><img title="top_logo" src="images/top_bar.png"/></li>
+        </div> 
+
+       
+        <button class="out_btn" type="button">Logout</button> 
+        
+        <a class="account" href="account.html">My Account</a>
+        
+    <h3>Projects</h3>
+    
+     <button class="add_btn" type="button">Add +</button> 
+        
+       <div id="project1" class="accordian">	
+            <p>Project Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        </div>
+        
+        <div id="project_blank">
+        	<p>Project Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        <div id="project_blank">
+        	<p>Project Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        <div id="project_blank">
+        	<p>Project Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div> 
+	
+	</script>
+
+    <script type="text/template" id="template_project_1">
+        // Main Area
+        <section id='main'>
+            <div id='project'>
+        // ------IMPORTANT -----
+                <div id='important' class='projects'>
+                    <img id='important_icon' scr="images/important_icon.png" alt='important' />
+                    <p>{{=status}}</p>
+                    <p>ID#<span class='pID'>{{=id}}</span></p>
+                    <h2>{{=projectName}}</h2>
+                    <h3>{{=dueDate}}</h3>
+                    <img id='delete_project_1' src='images/delete_icon.png' alt='delete' />
+                    <img id='edit' src='images/edit_icon.png' alt='edit' />
+                </div>
+            </div>
+        </section>
+    </script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~task page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+	<script type="text/template" id="template_task_page">
+	
+		 <div id="top_bar">
+        	<li><img title="top_logo" src="images/top_bar.png"/></li>
+        </div>
+
+       
+        <button class="out_btn" type="button">Logout</button> 
+        
+        <a class="account" href="account.html">My Account</a>
+        
+    <h3>Tasks</h3>
+        
+        
+   <button class="add_btn" type="button">Add +</button> 
+        
+        <div id="task_blank">
+        	<p>Task Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        
+        <div id="task_blank">
+        	<p>Task Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        <div id="task_blank">
+        	<p>Task Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        <div id="task_blank">
+        	<p>Task Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div> 
+	
+	</script>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~contact page~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	
+	<script type="text/template" id="template_contact_page">
+	
+		 <div id="top_bar">
+        	<li><img title="top_logo" src="images/top_bar.png"/></li>
+        </div>
+        
+
+        <button class="out_btn" type="button">Logout</button> 
+        
+        <a class="account" href="account.html">My Account</a>
+        
+    <h3>Contacts</h3>
+        
+        
+   <button class="add_btn" type="button">Add +</button> 
+        
+        <div id="contact_blank">
+        	<p>Contact Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        
+        <div id="contact_blank">
+        	<p>Contact Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        <div id="contact_blank">
+        	<p>Contact Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div>
+        <div id="contact_blank">
+        	<p>Contact Name Here</p>
+        	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
+        	
+        </div> 
+	
+	</script>
+	
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<script type="text/template" id="template_task_link111">
+	
+		<!-- repeatable html for task menu -->
+	
+	</script>
+	<!-- more component templates here -->
+	
+</div>
