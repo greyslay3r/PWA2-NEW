@@ -15,7 +15,8 @@
         
         <button class="out_btn" type="button">Logout</button> 
         
-        <a class="account" href="account.html">My Account</a>
+        <div id="account" class="account_btn">My Account</div>
+        
         <h3>Dashboard</h3>
         <div id="menu" >
         	 <li><p id="projects">Projects</p></li>
@@ -33,15 +34,16 @@
         </div> 
 
         <button class="out_btn" type="button">Logout</button> 
-        <a class="account" href="account.html">My Account</a>
+        <div id="account" class="account_btn">My Account</div>
         
     <!--  DASHBOARD -->
-	   <aside id="dashboard">
-         <h1>Dashboard</h1>
+	
+           <h1 id="projects_dashboard" class="dashboard_btn">Dashboard</h1>
+
+         
             <h1>Projects</h1>
             <p id ="new_project_button">Create New Project</p>
-           <h1 id='dashboard_tasks_project'>Tasks</h1>
-     </aside>
+     
      <!-- Main Area -->
         <section id='main'>
              <div id='project1'>
@@ -83,21 +85,15 @@
         	<li><img title="top_logo" src="images/top_bar.png"/></li>
         </div>
 
-       
+       <div id="account" class="account_btn">My Account</div>
         <button class="out_btn" type="button">Logout</button> 
         
-        <a class="account" href="account.html">My Account</a>
-        
-    <aside id="dashboard">
-         <h1>Dashboard</h1>
-            <!--<h1>Projects</h1>-->
-            <p id ="new_project_button">Create New Project</p>
+
+            <p id ="new_task_button">Create New Task</p>
            <h1 id='dashboard_tasks_project'>Tasks</h1>
-     </aside>
+     
+       <h1 id="tasks_dashboard" class="dashboard_btn">Dashboard</h1>
 
-
-
-	
 	</script>
 
     <script type="text/template" id="template_task_1">
@@ -125,11 +121,9 @@
 		 <div id="top_bar">
         	<li><img title="top_logo" src="images/top_bar.png"/></li>
         </div>
-        
+        <div id="account" class="account_btn">My Account</div>
 
         <button class="out_btn" type="button">Logout</button> 
-        
-        <a class="account" href="account.html">My Account</a>
         
     <h3>Contacts</h3>
         
@@ -157,10 +151,45 @@
         	<li><img title="down_arrow" src="images/down_arrow.png"/></li>
         	
         </div> 
+
+       <h1 id="contacts_dashboard" class="dashboard_btn">Dashboard</h1>
 	
 	</script>
+
+    <script type="text/template" id="template_contact_1">
+         <!-- Main Area -->
+        <section id='main'>
+            <div id='task'>
+                <div id='important' class='tasks'>
+                    <img id='important_icon' scr="images/important_icon.png" />
+                    <p>{{=status}}</p>
+                    <p>ID#<span class='pID'>{{=id}}</span></p>
+                    <h2>{{=taskName}}</h2>
+                    <h3>{{=dueDate}}</h3>
+                    <img id='delete_project_1' src='images/delete_icon.png' alt='delete' />
+                    <img id='edit' src='images/edit_icon.png' alt='edit' />
+                </div>
+            </div>
+        </section>
+    </script>
 	
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~ account page  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <script type="text/template" id="template_account">
+    
+         <div id="top_bar">
+            <li><img title="top_logo" src="images/top_bar.png"/></li>
+        </div>
+
+       
+        <button class="out_btn" type="button">Logout</button> 
+        
+    <h1>My Account</h1>
+        
+         <h1 id="account_dashboard" class="dashboard_btn">Dashboard</h1>
+    
+    </script>
+
+
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 	<script type="text/template" id="template_task_link111">

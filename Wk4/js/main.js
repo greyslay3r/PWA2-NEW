@@ -56,6 +56,8 @@
 			$('#tasks').on('click',loadTasks);
 			$('#contacts').on('click',loadContacts);
 			$('.out_btn').on('click', logout);
+			$('#account').on('click', myAccount);
+
 			// ---------------------
 
 			// $('.join_btn').on('click', loadRegForm);
@@ -76,6 +78,9 @@
 			$.render(currentUser, 'app');		// use template
 			container.html(appCode);
 
+			$('#projects_dashboard').on('click', loadApp);
+			$('#account').on('click', myAccount);
+
 			$.ajax({
 				url: 'xhr/get_projects.php',
 				type: 'get',
@@ -94,10 +99,8 @@
 
 							for (var i = 0, j=response.projects.length; i<j; i++){
 								var project = response.projects[i];
-								markup += $.render(project, 'projects');							};
-								
-								// var client = project.clientName;
-								// console.log("client name is :"+client);
+								markup += $.render(project, 'projects');	
+							}
 								// ====== accordian attempt =======
 								// $('#accordian').jacc({
 								// 	header: '#down_arrow',
@@ -108,10 +111,10 @@
 								// =================================
 
 							$('.projects').html(markup);
-						})
+						});
 					}
 				}
-			})
+			});
 
 		});
 
@@ -125,6 +128,9 @@
 			$.template('app', appCode);		// compile template
 			$.render(currentUser, 'app');		// use template
 			container.html(appCode);
+
+			$('#tasks_dashboard').on('click', loadApp);
+			$('#account').on('click', myAccount);
 
 			$.ajax({
 				url: 'xhr/get_tasks.php',
@@ -145,13 +151,13 @@
 							for (var i = 0, j=response.tasks.length; i<j; i++){
 								var task = response.tasks[i];
 								markup += $.render(task, 'tasks');
-							};
+							}
 
 							$('.tasks').html(markup);
 						})
 					}
 				}
-			})
+			});
 
 		});
 
@@ -165,6 +171,9 @@
 			$.template('app', appCode);		// compile template
 			$.render(currentUser, 'app');		// use template
 			container.html(appCode);
+
+			$('#contacts_dashboard').on('click', loadApp);
+			$('#account').on('click', myAccount);
 
 		});
 
@@ -215,7 +224,23 @@
 		});
 		return false;
 	};
-	
+	// ===============  My Account  =================
+
+	var myAccount = function(){
+
+		$.get('templates/app.html', function(html){
+			var h = $(html);
+			var appCode = h.find('#template_account').html();
+			$.template('app', appCode);		// compile template
+			$.render(currentUser, 'app');		// use template
+			container.html(appCode);
+		
+			$('#account_dashboard').on('click', loadApp);
+
+		});
+	};
+
+
 // 	===============  logout function  =============
 
 	var logout = function(){
